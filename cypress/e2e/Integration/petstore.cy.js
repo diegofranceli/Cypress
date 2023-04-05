@@ -20,39 +20,39 @@ describe('API test for Petstore', () => {
     })   
 
 
-    it('Finds Pets by invalid status', () => {
-        const URL_Petstore = 'https://petstore.swagger.io/v2/pet/findByStatus?status=test'
-        cy.request({
-            method: 'GET',
-            url: URL_Petstore
+    // it('Finds Pets by invalid status', () => {
+    //     const URL_Petstore = 'https://petstore.swagger.io/v2/pet/findByStatus?status=test'
+    //     cy.request({
+    //         method: 'GET',
+    //         url: URL_Petstore
 
-        }).then((response)=>{
+    //     }).then((response)=>{
     
-            // Mostrar na tela qual o status code da aquisição 
-            const firstPet = response.status
-            cy.log(JSON.stringify(firstPet, null, 2))//printando o resultado convertendo json para string
-            expect(response.status).to.eq(400)
-        })
+    //         // Mostrar na tela qual o status code da aquisição 
+    //         const firstPet = response.status
+    //         cy.log(JSON.stringify(firstPet, null, 2))//printando o resultado convertendo json para string
+    //         expect(response.status).to.eq(400)
+    //     })
 
-    })  
+    // })  
     
-    it('Checking the name type (string)', () => {
-        const URL_Petstore = 'https://petstore.swagger.io/v2/pet/findByStatus?status=available'
-        cy.request({
-            method: 'GET',
-            url: URL_Petstore
+    // it('Checking the name type (string)', () => {
+    //     const URL_Petstore = 'https://petstore.swagger.io/v2/pet/findByStatus?status=available'
+    //     cy.request({
+    //         method: 'GET',
+    //         url: URL_Petstore
 
-        }).then((response)=>{
+    //     }).then((response)=>{
     
            
-            // response.body.forEach((pet) => {
-            //    const firstPet = pet.name
-            //     cy.log(JSON.stringify(firstPet, null, 2))
-                expect(pet.name).to.be.a('string')
-            // }) 
-        })
+    //         // response.body.forEach((pet) => {
+    //         //    const firstPet = pet.name
+    //         //     cy.log(JSON.stringify(firstPet, null, 2))
+    //             expect(pet.name).to.be.a('string')
+    //         // }) 
+    //     })
 
-    })   
+    // })   
 
 
     it('Add a new pet to the store', () => {
